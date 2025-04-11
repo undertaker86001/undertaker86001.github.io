@@ -19,12 +19,12 @@
   <meta name="author" content="undertaker86001">
   <meta name="keywords" content="">
   
-    <meta name="description" content="minIO基准测试  测试环境  1、硬件环境   组件 配置&#x2F;版本 说明 备注    操作系统 Ubuntu 22.04 LTS 轻量级，低初始资源公司常用系统    cpu 2核 低配置    内存 4G 重点关注资源    存储 50G HDD（挂载到&#x2F;data） 单磁盘，无raid 需要定时清理   minIo版本 RELEASE.2023-12-06T09-09-22">
+    <meta name="description" content="测试环境  1、硬件环境   组件 配置&#x2F;版本 说明 备注    操作系统 Ubuntu 22.04 LTS 轻量级，低初始资源公司常用系统    cpu 2核 低配置    内存 4G 重点关注资源    存储 50G HDD（挂载到&#x2F;data） 单磁盘，无raid 需要定时清理   minIo版本 RELEASE.2023-12-06T09-09-22Z 裸机部署&amp;#x2">
 <meta property="og:type" content="article">
 <meta property="og:title" content="86不存在的地域">
 <meta property="og:url" content="https://undertaker86001.github.io/2025/04/10/minIO-basic-test/index.html">
 <meta property="og:site_name" content="86不存在的地域">
-<meta property="og:description" content="minIO基准测试  测试环境  1、硬件环境   组件 配置&#x2F;版本 说明 备注    操作系统 Ubuntu 22.04 LTS 轻量级，低初始资源公司常用系统    cpu 2核 低配置    内存 4G 重点关注资源    存储 50G HDD（挂载到&#x2F;data） 单磁盘，无raid 需要定时清理   minIo版本 RELEASE.2023-12-06T09-09-22">
+<meta property="og:description" content="测试环境  1、硬件环境   组件 配置&#x2F;版本 说明 备注    操作系统 Ubuntu 22.04 LTS 轻量级，低初始资源公司常用系统    cpu 2核 低配置    内存 4G 重点关注资源    存储 50G HDD（挂载到&#x2F;data） 单磁盘，无raid 需要定时清理   minIo版本 RELEASE.2023-12-06T09-09-22Z 裸机部署&amp;#x2">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://undertaker86001.github.io/.io//Aspose.Words.6ee0599a-ea23-4ca7-ab01-21684863815b.001.png">
 <meta property="og:image" content="https://undertaker86001.github.io/.io//Aspose.Words.6ee0599a-ea23-4ca7-ab01-21684863815b.002.png">
@@ -62,7 +62,7 @@
 <meta property="og:image" content="https://undertaker86001.github.io/.io//Aspose.Words.6ee0599a-ea23-4ca7-ab01-21684863815b.034.png">
 <meta property="og:image" content="https://undertaker86001.github.io/.io//Aspose.Words.6ee0599a-ea23-4ca7-ab01-21684863815b.035.png">
 <meta property="article:published_time" content="2025-04-10T15:47:14.000Z">
-<meta property="article:modified_time" content="2025-04-11T08:02:54.043Z">
+<meta property="article:modified_time" content="2025-04-11T08:04:41.694Z">
 <meta property="article:author" content="undertaker86001">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://undertaker86001.github.io/.io//Aspose.Words.6ee0599a-ea23-4ca7-ab01-21684863815b.001.png">
@@ -311,8 +311,7 @@
             
               <div class="markdown-body">
                 
-                <p><strong>minIO基准测试</strong></p>
-<ol>
+                <ol>
 <li><h1 id="测试环境"><a href="#测试环境" class="headerlink" title="测试环境"></a><strong>测试环境</strong></h1></li>
 </ol>
 <h2 id="1、硬件环境"><a href="#1、硬件环境" class="headerlink" title="1、硬件环境"></a><strong>1、硬件环境</strong></h2><table>
@@ -380,7 +379,8 @@
 <td align="left">需要独立安装，模拟真实的客户端</td>
 </tr>
 </tbody></table>
-<h3 id="2-1、mc工具安装："><a href="#2-1、mc工具安装：" class="headerlink" title="2.1、mc工具安装："></a><strong>2.1、mc工具安装：</strong></h3><p>直接到github下载对应的二进制文件，注意下载的版本一定要大于等于minio的版本。<br>可执行文件下载地址：<a target="_blank" rel="noopener" href="https://dl.min.io/client/mc/release/linux-amd64/archive/">https://dl.min.io/client/mc/release/linux-amd64/archive/</a><br>项目地址：<a target="_blank" rel="noopener" href="https://github.com/minio/mc">GitHub - minio&#x2F;mc: Unix like utilities for object store</a><br>mc使用文档：<a target="_blank" rel="noopener" href="https://www.minio.org.cn/docs/minio/linux/reference/minio-mc.html">MinIO客户端 &#8212; MinIO中文文档 | MinIO Linux中文文档</a><br><img src="/.io//Aspose.Words.6ee0599a-ea23-4ca7-ab01-21684863815b.001.png" srcset="/img/loading.gif" lazyload alt="descript"></p>
+<h3 id="2-1、mc工具安装："><a href="#2-1、mc工具安装：" class="headerlink" title="2.1、mc工具安装："></a><strong>2.1、mc工具安装：</strong></h3><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs crystal">直接到github下载对应的二进制文件，注意下载的版本一定要大于等于minio的版本。<br><br>可执行文件下载地址：&lt;<span class="hljs-symbol">https:</span>/<span class="hljs-regexp">/dl.min.io/client</span><span class="hljs-regexp">/mc/release</span><span class="hljs-regexp">/linux-amd64/archive</span><span class="hljs-regexp">/&gt;</span><br><span class="hljs-regexp"></span><br><span class="hljs-regexp">项目地址：[GitHub - minio/mc</span>: Unix like utilities <span class="hljs-keyword">for</span> object store](<span class="hljs-symbol">https:</span>/<span class="hljs-regexp">/github.com/minio</span><span class="hljs-regexp">/mc)</span><br><span class="hljs-regexp"></span><br><span class="hljs-regexp">mc使用文档：[MinIO客户端 &amp;#8212; MinIO中文文档 | MinIO Linux中文文档](https:/</span><span class="hljs-regexp">/www.minio.org.cn/docs</span><span class="hljs-regexp">/minio/linux</span><span class="hljs-regexp">/reference/minio</span>-mc.html)<br></code></pre></td></tr></table></figure>
+<p><img src="/.io//Aspose.Words.6ee0599a-ea23-4ca7-ab01-21684863815b.001.png" srcset="/img/loading.gif" lazyload alt="descript"></p>
 <p>把二进制文件拷贝到要运行的机器直接执行，重命名成简短的mc：</p>
 <p><img src="/.io//Aspose.Words.6ee0599a-ea23-4ca7-ab01-21684863815b.002.png" srcset="/img/loading.gif" lazyload></p>
 <p><img src="/.io//Aspose.Words.6ee0599a-ea23-4ca7-ab01-21684863815b.003.png" srcset="/img/loading.gif" lazyload alt="descript"></p>
